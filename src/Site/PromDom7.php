@@ -16,6 +16,7 @@ class PromDom7 implements SiteInterface
         return array_map(function ($flat) {
             return [
                 'area' => $flat['area'],
+                'number' => $flat['number'],
                 'is_studio' => $flat['is_studio'],
                 'price' => $flat['price'],
                 'price_with_discount' => $flat['price_with_discount'],

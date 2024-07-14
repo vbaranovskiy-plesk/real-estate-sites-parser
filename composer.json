@@ -11,7 +11,8 @@
     "ext-simplexml": "*",
     "ext-json": "*",
     "ext-libxml": "*",
-    "guzzlehttp/guzzle": "^7.8"
+    "guzzlehttp/guzzle": "^7.8",
+    "viest/php-ext-xlswriter-ide-helper": "dev-master"
   },
   "config": {
     "process-timeout": 1800,

@@ -3,5 +3,7 @@ namespace App\Site;
 
 interface SiteInterface
 {
-    public function getData(): string;
+    public function getData(): array;
+
+    public function getReportFileName(): string;
 }

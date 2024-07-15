@@ -11,7 +11,7 @@ class XlsBuilder
 
     public function createXls(SiteInterface $site)
     {
-        $columnIds = ['A', 'B', 'C', 'D', 'E', 'F','G', 'H', 'I'];
+        $columnIds = ['A', 'B', 'C', 'D', 'E', 'F','G', 'H', 'I', 'J', 'K'];
         $filename = $site->getReportFileName();
         $excel  = new \Vtiful\Kernel\Excel([
             'path' => $this->prefix

@@ -5,7 +5,7 @@ class PromDom7 implements SiteInterface
 {
     public function getReportFileName(): string
     {
-        return 'promdom7.ru.xlsx';
+        return 'promdom7.ru' . '-' . date("Y-m-d") . '.xlsx';
     }
 
     public function getData(): array

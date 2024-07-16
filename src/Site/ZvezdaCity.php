@@ -5,7 +5,7 @@ class ZvezdaCity implements SiteInterface
 {
     public function getReportFileName(): string
     {
-        return 'zvezda.city.xlsx';
+        return 'zvezda.city' . '-' . date("Y-m-d") . '.xlsx';
     }
 
     public function getData(): array

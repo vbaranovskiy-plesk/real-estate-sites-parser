@@ -5,7 +5,7 @@ class Koroleva implements SiteInterface
 {
     public function getReportFileName(): string
     {
-        return 'koroleva.xlsx';
+        return 'koroleva' . '-' . date("Y-m-d") . '.xlsx';
     }
 
     public function getData(): array

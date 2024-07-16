@@ -5,7 +5,7 @@ class Biography implements SiteInterface
 {
     public function getReportFileName(): string
     {
-        return 'biography.xlsx';
+        return 'biography' . '-' . date("Y-m-d") . '.xlsx';
     }
 
     public function getData(): array

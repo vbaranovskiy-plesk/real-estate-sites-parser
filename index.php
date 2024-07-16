@@ -9,8 +9,8 @@ use App\Site\{
 use App\Report;
 
 $report = new Report([
-    //new PromDom7(),
-    //new ZvezdaCity(),
+    new PromDom7(),
+    new ZvezdaCity(),
     new Biography()
 ]);
 $report->make();

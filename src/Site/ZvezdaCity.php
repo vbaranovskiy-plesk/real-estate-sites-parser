@@ -37,13 +37,13 @@ class ZvezdaCity implements SiteInterface
 
             $roomContent = $tds->item(0)->textContent;
             $data[] = [
-                'room_number' => $tds->item(5)->textContent,
-                'rooms' => $this->getRoomsCount($roomContent),
-                'is_studio' => $roomContent === 'Студия' ? 1 : 0,
-                'area' => $tds->item(1)->textContent,
-                'price' => $tds->item(2)->textContent,
-                'floor' => $tds->item(4)->textContent,
-                'section' => $tds->item(8)->textContent,
+                'room_number' => (int)$tds->item(5)->textContent,
+                'rooms' => (int)$this->getRoomsCount($roomContent),
+                'is_studio' => (int)$roomContent === 'Студия' ? 1 : 0,
+                'area' => str_replace('.', ',', trim($tds->item(1)->textContent)),
+                'price' => (int)preg_replace("/[^0-9]/", "", $tds->item(2)->textContent),
+                'floor' => (int)$tds->item(4)->textContent,
+                'section' => (int)$tds->item(8)->textContent,
             ];
         }
 

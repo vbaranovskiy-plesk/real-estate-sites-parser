@@ -6,7 +6,8 @@ use App\Site\{
     ZvezdaCity,
     Biography,
     Koroleva,
-    Zaozernyi
+    Zaozernyi,
+    ArkadiaIvanova
 };
 use App\Report;
 
@@ -15,7 +16,8 @@ $report = new Report([
     new ZvezdaCity(),
     new Biography(),
     new Koroleva(),
-    new Zaozernyi()
+    new Zaozernyi(),
+    new ArkadiaIvanova()
 ]);
 $report->make();
 echo "Report is done";

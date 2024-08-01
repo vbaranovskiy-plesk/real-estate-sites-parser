@@ -10,5 +10,5 @@ composer install
 php -S 0.0.0.0:80 index.php
 ```
 Usage:
-send post requests to http://localhost:80
+open http://localhost
 

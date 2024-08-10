@@ -11,6 +11,7 @@ use App\Site\{
     Sibirskaya74,
     Sibirskaya84,
     Kvartal1604,
+    TetrisNsk
 };
 use App\Report;
 
@@ -23,7 +24,8 @@ $report = new Report([
     new ArkadiaIvanova(),
     new Sibirskaya74(),
     new Sibirskaya84(),
-    new Kvartal1604()
+    new Kvartal1604(),
+    new TetrisNsk()
 ]);
 $report->make();
 echo "Report is done";

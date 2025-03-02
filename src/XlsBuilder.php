@@ -11,7 +11,7 @@ class XlsBuilder
 
     public function createXls(SiteInterface $site)
     {
-        $columnIds = ['A', 'B', 'C', 'D', 'E', 'F','G', 'H', 'I', 'J', 'K'];
+        $columnIds = ['A', 'B', 'C', 'D', 'E', 'F','G', 'H', 'I', 'J', 'K', 'L'];
         $filename = $site->getReportFileName();
         $excel  = new \Vtiful\Kernel\Excel([
             'path' => $this->prefix
@@ -24,7 +24,9 @@ class XlsBuilder
             $columnHeaders = array_keys($firstline);
             $file->header($columnHeaders);
             for ($i = 0; $i < count($columnHeaders); $i++) {
-                $file->setColumn($columnIds[$i] . ':' . $columnIds[$i], 20, $format->toResource());
+                if (isset($columnIds[$i])) {
+                    $file->setColumn($columnIds[$i] . ':' . $columnIds[$i], 20, $format->toResource());
+                }
             }
         }
         $file->data($data);

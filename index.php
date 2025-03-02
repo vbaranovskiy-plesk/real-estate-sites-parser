@@ -11,6 +11,7 @@ use App\Site\{
     Sibirskaya74,
     Sibirskaya84,
     Kvartal1604,
+    Kvartal1604Pantries,
     TetrisNsk
 };
 use App\Report;
@@ -25,6 +26,7 @@ $report = new Report([
     new Sibirskaya74(),
     new Sibirskaya84(),
     new Kvartal1604(),
+    new Kvartal1604Pantries(),
     new TetrisNsk()
 ]);
 $report->make();

@@ -13,6 +13,8 @@ use App\Site\{
     Kvartal1604,
     Kvartal1604Pantries,
     TetrisNsk,
+    PoeziaHouse,
+    PoeziaParking,
     TrendAgent
 };
 use App\Report;
@@ -37,6 +39,8 @@ $report = new Report([
     new Kvartal1604(),
     new Kvartal1604Pantries(),
     new TetrisNsk(),
+    new PoeziaHouse(),
+    new PoeziaParking()
 ]);
 $report->make();
 

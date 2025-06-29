@@ -16,7 +16,10 @@ use App\Site\{
     PoeziaParking,
     TrendAgent,
     ZvezdaCityDm2552,
-    ZvezdaCityDm3887
+    ZvezdaCityDm3887,
+    Avtorskiy,
+    Nasledie,
+    Voikov
 };
 use App\Report;
 
@@ -42,7 +45,10 @@ $report = new Report([
     new PoeziaHouse(),
     new PoeziaParking(),
     new ZvezdaCityDm2552(),
-    new ZvezdaCityDm3887()
+    new ZvezdaCityDm3887(),
+    new Avtorskiy(),
+    new Nasledie(),
+    new Voikov()
 ]);
 $report->make();
 

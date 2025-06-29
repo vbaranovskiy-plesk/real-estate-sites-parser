@@ -20,7 +20,8 @@ class Nasledie implements SiteInterface
 
     private function getObjectData(string $id): array
     {
-        $authorization = "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJzaXRlX3dpZGdldCIsImp0aSI6ImIwNzU3OTQ3NjZlOGM3MTFkOWI0NTk2MDgwZGEzNjRkNGUzZDE1ZDk5OWZmZWE4YmNmZDc1MmM1ZjA3MDQ5M2ViZmQxY2Q0NGU5YTVlMmVjIiwiaWF0IjoxNzQ3NzYwODU4LjEyODQyNCwibmJmIjoxNzQ3NzYwODU4LjEyODQyNywiZXhwIjoxNzQ3NzY0NDU4LjEyMzQxNCwic3ViIjoiU0lURV9XSURHRVR8MzMxNSIsInNjb3BlcyI6WyJTSVRFX1dJREdFVCJdLCJ0eXBlIjoic2l0ZVdpZGdldCIsImVudGl0bGVtZW50cyI6IiIsImFjY291bnQiOnsiaWQiOjY4NTgsInRpdGxlIjoi0JDQutCw0LTQtdC80LjRjyIsInN1YmRvbWFpbiI6InBiNjg1OCIsImJpbGxpbmdPd25lcklkIjo2ODk1LCJjb3VudHJ5Q29kZSI6IlJVIn0sInJvbGVzIjpbIlJPTEVfU0lURV9XSURHRVQiXSwic2l0ZVdpZGdldCI6eyJpZCI6MzMxNSwiZG9tYWluIjoiaHR0cHM6Ly94bi0tODBhZXNlZHhvaWcueG4tLXAxYWkifX0.W4DBy1qbAxXPBFLXf18EkB4KQuoLbmRA8Jmc_54Beozaf8IEcmjZlv7__cZukmvxXxAAiTO2FcQqYVO8QUfIpbMlWPrA43UZt2cyWg57iEqhhBG8Ao7nad6b14lu-0WihuxLMwSiYqGnuarO_XDqFn8wNYi6xtj0wMKsPY0tw1za3zKD73dG9zlR9zZFp0O2T-yKt_iTKNce8QpDCTs5FPFmYZvbUzNpqRZMKBs6oqbjsZwLGIrtgwjfdDv9DVqgwTZeBXlDAUheUlKbtYl25ojAGalMtifZ1ucZXqi_uayIGI_5Mr-oXF2J1Bz8J9DZ_pFkW8m-Mtp5m4wGlVr9Zw";
+        //https://www.nasledie42.ru/#/catalog/house/123135/smallGrid?facadeId=56643&filter=property.status:AVAILABLE
+        $authorization = "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJzaXRlX3dpZGdldCIsImp0aSI6IjZkOTE3YTMzM2VmYTZhNzczNTZiYTAyNGFmZDZmMDA4YTMzOGFmZmMwZjRhZTk2MDE4ZTUwYTljNGI3MDlmYmFlNjdiMGYzYjhiZjQyOGVhIiwiaWF0IjoxNzUxMjA0MDg4LjIzMTIzNiwibmJmIjoxNzUxMjA0MDg4LjIzMTIzOSwiZXhwIjoxNzUxMjA3Njg4LjIyNjkzNiwic3ViIjoiU0lURV9XSURHRVR8MjY4MiIsInNjb3BlcyI6WyJTSVRFX1dJREdFVCJdLCJ0eXBlIjoic2l0ZVdpZGdldCIsImVudGl0bGVtZW50cyI6IiIsImFjY291bnQiOnsiaWQiOjExMzA0LCJ0aXRsZSI6ItCe0J7QniDQodCXIFwi0KLQn9ChLdCg0LjRjdC70YJcIiIsInN1YmRvbWFpbiI6InBiMTEzMDQiLCJiaWxsaW5nT3duZXJJZCI6MTEzNDEsImNvdW50cnlDb2RlIjoiUlUifSwicm9sZXMiOlsiUk9MRV9TSVRFX1dJREdFVCJdLCJzaXRlV2lkZ2V0Ijp7ImlkIjoyNjgyLCJkb21haW4iOiJodHRwczovL3d3dy5uYXNsZWRpZTQyLnJ1In19.PpI9VWXDbjomI_AqwpQE1K78cTuPszJp3OKJzYy23wrg59bnfWUPygllIO6Ag2mnlfvHIv2bwWIB5U0Rjrr3g86yZRiffPv0lj7XivMOiU96QTCnSG25LvBizuQa539B_TSDlbZ9thftSLBZazdH63vgnPdUIDlB0_J6BD87t2cVQLTArhQQmv84wdmYRvm_JsHYuyTnPU3ZbeK8Lssa8BMVXVEq3epj1dwouo9NtutC1-PYqel0dAD-Vd4PpiOKFIDfL2lo8rvncl3A3jm5ZTOpLlKbi2gGmcqVtOTSo4ITzdDdyi3gJf3klmyp-zQTztMgqXFLuQg_5AuHYEHgUg";
         $ch = curl_init("https://pb11304.profitbase.ru/api/v4/json/property?houseId=123135&returnFilteredCount=true");
         curl_setopt($ch, CURLOPT_HTTPHEADER, [ $authorization ]);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
@@ -33,28 +34,21 @@ class Nasledie implements SiteInterface
         }
         curl_close($ch);
         $data = json_decode($curlResult, true);
-        var_dump($data);
-        die();
-        $sections = $data['response']['sections'] ?? [];
         $result = [];
-        foreach ($sections as $section) {
-            foreach ($section['floors'] as $floor) {
-                foreach ($floor['flats'] as $flat) {
-                    $result[] = [
-                        'number' => $flat['number'],
-                        'area' => $flat['area'],
-                        'price' => $flat['price'],
-                        'price_meter' => $flat['price_meter'],
-                        'rooms' => $flat['rooms'],
-                        'is_studio' => $flat['is_studio'],
-                        'type' => $flat['type'],
-                        'section' => $flat['section_name'],
-                        'floor' => $flat['floor_number'],
-                        'status' => $flat['humanized_status'],
-                        'house_name' => $flat['house_name'],
-                    ];
-                }
+        foreach ($data['data']['properties'] as $flat) {
+            if (!$flat['number']) {
+                continue;
             }
+            $result[] = [
+                'number' => $flat['number'],
+                'area' => $flat['area']['area_total'],
+                'price' => (string)$flat['price'],
+                'rooms' => $flat['rooms_amount'],
+                'section' => $flat['sectionName'],
+                'floor' => $flat['floor'],
+                'status' => $flat['status'],
+                'house_name' => $flat['houseName'],
+            ];
         }
 
         return $result;

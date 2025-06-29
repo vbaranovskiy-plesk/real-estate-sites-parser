@@ -3,7 +3,6 @@ require_once('vendor' . DIRECTORY_SEPARATOR . 'autoload.php');
 
 use App\Site\{
     PromDom7,
-    ZvezdaCity,
     Biography,
     Koroleva,
     Zaozernyi,
@@ -15,7 +14,9 @@ use App\Site\{
     TetrisNsk,
     PoeziaHouse,
     PoeziaParking,
-    TrendAgent
+    TrendAgent,
+    ZvezdaCityDm2552,
+    ZvezdaCityDm3887
 };
 use App\Report;
 
@@ -29,7 +30,6 @@ use Facebook\WebDriver\Chrome\ChromeOptions;
 
 $report = new Report([
     new PromDom7(),
-    new ZvezdaCity(),
     new Biography(),
     new Koroleva(),
     new Zaozernyi(),
@@ -40,7 +40,9 @@ $report = new Report([
     new Kvartal1604Pantries(),
     new TetrisNsk(),
     new PoeziaHouse(),
-    new PoeziaParking()
+    new PoeziaParking(),
+    new ZvezdaCityDm2552(),
+    new ZvezdaCityDm3887()
 ]);
 $report->make();
 

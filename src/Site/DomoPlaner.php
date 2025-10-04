@@ -22,7 +22,8 @@ abstract class DomoPlaner implements SiteInterface
                 'rooms' => $flat['rooms'],
                 'house_title' => $flat['house_title'],
                 'floor_number' => $flat['floor_number'],
-                'metr_price' => $flat['metr_price'],
+                'metr_price' => $flat['metr_price'] ?? '',
+                'house_number' =>$flat['house_id'] ?? ''
             ];
         }, $flats);
     }

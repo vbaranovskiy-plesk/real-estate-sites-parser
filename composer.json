@@ -12,7 +12,8 @@
     "ext-json": "*",
     "ext-libxml": "*",
     "guzzlehttp/guzzle": "^7.8",
-    "viest/php-ext-xlswriter-ide-helper": "dev-master"
+    "viest/php-ext-xlswriter-ide-helper": "dev-master",
+    "php-webdriver/webdriver": "^1.15"
   },
   "config": {
     "process-timeout": 1800,
@@ -24,11 +25,5 @@
     "psr-4": {
       "App\\": "src/"
     }
-  },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://packagist.pp.plesk.tech"
-    }
-  ]
+  }
 }

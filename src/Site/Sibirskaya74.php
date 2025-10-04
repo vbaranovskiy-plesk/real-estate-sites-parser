@@ -27,7 +27,6 @@ class Sibirskaya74 implements SiteInterface
         /** @var \DOMNodeList $nodes */
         $nodes = $xpath->query("//*[contains(@class, '$classname')]");
         /** @var \DOMNode $node */
-        echo "<pre>";
         $data = [];
         foreach ($nodes as $node) {
             $entrance = 'Неизвестен';

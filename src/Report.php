@@ -18,9 +18,9 @@ class Report
             $filename = $site->getReportFileName();
             try {
                 (new XlsBuilder($reportPath))->createXls($site);
-                echo "Report file " . $filename . " is created.<br>";
+                echo "Report file " . $filename . " is created." . PHP_EOL;
             } catch (\Throwable $e) {
-                echo "Unable create report $filename :" . $e->getMessage() . "<br>";
+                echo "Unable create report $filename :" . $e->getMessage() . PHP_EOL;
             }
         }
     }

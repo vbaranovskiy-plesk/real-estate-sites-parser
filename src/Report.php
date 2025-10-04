@@ -2,13 +2,15 @@
 namespace App;
 use App\Site\SiteInterface;
 use App\Archiver\ArchiverInterface;
+use App\Telegram\TelegramSender;
 
 
 class Report
 {
     public function __construct(
         private readonly array $sites,
-        private readonly ArchiverInterface $archiver
+        private readonly ArchiverInterface $archiver,
+        private readonly TelegramSender $telegramSender
     ) {
     }
 
@@ -51,8 +53,21 @@ class Report
 
             $this->archiver->createArchive($generatedFiles, $archivePath);
             echo "Archive created: " . $archiveName . PHP_EOL;
+
+            $this->sendToTelegram($archivePath, $archiveName);
         } catch (\Throwable $e) {
             echo "Failed to create archive: " . $e->getMessage() . PHP_EOL;
+        }
+    }
+
+    private function sendToTelegram(string $archivePath, string $archiveName): void
+    {
+        try {
+            $caption = "Real Estate Reports - " . date('Y-m-d H:i:s') . "\nFile: " . $archiveName;
+            $this->telegramSender->sendDocument($archivePath, $caption);
+            echo "Archive sent to Telegram successfully" . PHP_EOL;
+        } catch (\Throwable $e) {
+            echo "Failed to send archive to Telegram: " . $e->getMessage() . PHP_EOL;
         }
     }
 }

@@ -23,6 +23,8 @@ use App\Site\{
 };
 use App\Report;
 use App\Archiver\ZipArchiver;
+use App\Telegram\TelegramSender;
+use Dotenv\Dotenv;
 
 
 use Facebook\WebDriver\Remote\DesiredCapabilities;
@@ -31,6 +33,10 @@ use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\WebDriverWait;
 use Facebook\WebDriver\WebDriverExpectedCondition;
 use Facebook\WebDriver\Chrome\ChromeOptions;
+
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+$dotenv->required(['TELEGRAM_BOT_TOKEN', 'TELEGRAM_CHAT_ID']);
 
 $sites = [
     new PromDom7(),
@@ -49,8 +55,16 @@ $sites = [
     new Nasledie(),
     new Voikov()
 ];
+$sites = [
+    new PromDom7(),
+];
 
-$report = new Report($sites, new ZipArchiver());
+
+$botToken = $_ENV['TELEGRAM_BOT_TOKEN'];
+$chatId = $_ENV['TELEGRAM_CHAT_ID'];
+
+$telegramSender = new TelegramSender($botToken, $chatId);
+$report = new Report($sites, new ZipArchiver(), $telegramSender);
 
 $report->make();
 

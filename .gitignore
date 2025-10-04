@@ -12,5 +12,7 @@ nbproject
 Thumbs.db
 # composer vendor dir
 /vendor
+/report
 .env
-
+.claude
+.CLAUDE.md

@@ -50,9 +50,10 @@ $report = new Report([
     new Nasledie(),
     new Voikov()
 ]);
+
 $report->make();
 
-/*
+/* Do not remove commented code!!!!!!!!
 $seleniumHubUrl = 'http://localhost:4444/wd/hub';  // ✅ Correct
 
 $options = new Facebook\WebDriver\Chrome\ChromeOptions();

@@ -22,6 +22,7 @@ use App\Site\{
     Voikov
 };
 use App\Report;
+use App\Archiver\ZipArchiver;
 
 
 use Facebook\WebDriver\Remote\DesiredCapabilities;
@@ -31,14 +32,12 @@ use Facebook\WebDriver\WebDriverWait;
 use Facebook\WebDriver\WebDriverExpectedCondition;
 use Facebook\WebDriver\Chrome\ChromeOptions;
 
-$report = new Report([
+$sites = [
     new PromDom7(),
     new Biography(),
     new Koroleva(),
     new Zaozernyi(),
     new ArkadiaIvanova(),
-    new Sibirskaya74(),
-    new Sibirskaya84(),
     new Kvartal1604(),
     new Kvartal1604Pantries(),
     new TetrisNsk(),
@@ -49,7 +48,9 @@ $report = new Report([
     new Avtorskiy(),
     new Nasledie(),
     new Voikov()
-]);
+];
+
+$report = new Report($sites, new ZipArchiver());
 
 $report->make();
 

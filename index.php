@@ -53,6 +53,7 @@ $sites = [
     new ZvezdaCityDm3887(),
     new Avtorskiy(),
     new Nasledie(),
+    new Voikov()
 ];
 
 

@@ -19,7 +19,8 @@ use App\Site\{
     ZvezdaCityDm3887,
     Avtorskiy,
     Nasledie,
-    Voikov
+    Voikov,
+    Progrand
 };
 use App\Report;
 use App\Archiver\ZipArchiver;
@@ -51,9 +52,10 @@ $sites = [
     new PoeziaParking(),
     new ZvezdaCityDm2552(),
     new ZvezdaCityDm3887(),
-    new Avtorskiy(),
+    //new Avtorskiy(),
     new Nasledie(),
-    new Voikov()
+    new Voikov(),
+    new Progrand()
 ];
 
 

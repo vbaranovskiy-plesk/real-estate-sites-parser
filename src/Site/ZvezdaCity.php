@@ -21,10 +21,6 @@ class ZvezdaCity implements SiteInterface
         $dom = new \DOMDocument();
         $dom->loadHTML($contentType. $match[0]);
 
-        $headers = [];
-
-        $tableHeaders = $dom->getElementsByTagName('tr');
-        /** @var \DOMNode $header */
 
         $rows = $dom->getElementsByTagName("tr");
         $data = [];

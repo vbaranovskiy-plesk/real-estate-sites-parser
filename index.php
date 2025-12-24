@@ -20,7 +20,8 @@ use App\Site\{
     Avtorskiy,
     Nasledie,
     Voikov,
-    Progrand
+    Progrand,
+    NikolskiyKluch
 };
 use App\Report;
 use App\Archiver\ZipArchiver;
@@ -55,7 +56,8 @@ $sites = [
     //new Avtorskiy(),
     new Nasledie(),
     new Voikov(),
-    new Progrand()
+    new Progrand(),
+    new NikolskiyKluch()
 ];
 
 

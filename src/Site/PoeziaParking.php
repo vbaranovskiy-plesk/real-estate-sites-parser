@@ -10,7 +10,7 @@ class PoeziaParking extends DomoPlaner implements SiteInterface
 
     public function getUrl(): string
     {
-        return 'https://domoplaner.ru/widget-api/widget/359-2tXpIm/parking/';
+        return 'https://domoplaner.ru/widget-api/widget/548-uCMlwJ/parking/';
     }
 
     public function getData(): array

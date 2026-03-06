@@ -7,8 +7,6 @@ use App\Site\{
     Koroleva,
     Zaozernyi,
     ArkadiaIvanova,
-    Sibirskaya74,
-    Sibirskaya84,
     Kvartal1604,
     Kvartal1604Pantries,
     TetrisNsk,
@@ -17,11 +15,13 @@ use App\Site\{
     TrendAgent,
     ZvezdaCityDm2552,
     ZvezdaCityDm3887,
-    Avtorskiy,
     Nasledie,
     Voikov,
     Progrand,
-    NikolskiyKluch
+    NikolskiyKluch,
+    ParaPark,
+    Nasledie2,
+    Nasledie4
 };
 use App\Report;
 use App\Archiver\ZipArchiver;
@@ -53,13 +53,14 @@ $sites = [
     new PoeziaParking(),
     new ZvezdaCityDm2552(),
     new ZvezdaCityDm3887(),
-    //new Avtorskiy(),
     new Nasledie(),
     new Voikov(),
     new Progrand(),
-    new NikolskiyKluch()
+    new NikolskiyKluch(),
+    new ParaPark(),
+    new Nasledie2(),
+    new Nasledie4()
 ];
-
 
 $botToken = $_ENV['TELEGRAM_BOT_TOKEN'];
 $chatId = $_ENV['TELEGRAM_CHAT_ID'];

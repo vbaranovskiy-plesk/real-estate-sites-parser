@@ -5,7 +5,7 @@ class Nasledie extends DomoPlaner implements SiteInterface
 {
     public function getReportFileName(): string
     {
-        return 'nasledie' . '-' . date("Y-m-d") . '.xlsx';
+        return 'nasledie1' . '-' . date("Y-m-d") . '.xlsx';
     }
 
     public function getUrl(): string

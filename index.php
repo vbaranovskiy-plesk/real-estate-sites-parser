@@ -21,7 +21,8 @@ use App\Site\{
     NikolskiyKluch,
     ParaPark,
     Nasledie2,
-    Nasledie4
+    Nasledie4,
+    Yalta70
 };
 use App\Report;
 use App\Archiver\ZipArchiver;
@@ -59,7 +60,8 @@ $sites = [
     new NikolskiyKluch(),
     new ParaPark(),
     new Nasledie2(),
-    new Nasledie4()
+    new Nasledie4(),
+    new Yalta70()
 ];
 
 $botToken = $_ENV['TELEGRAM_BOT_TOKEN'];

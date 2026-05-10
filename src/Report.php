@@ -10,7 +10,7 @@ class Report
     public function __construct(
         private readonly array $sites,
         private readonly ArchiverInterface $archiver,
-        private readonly TelegramSender $telegramSender
+        private readonly ?TelegramSender $telegramSender
     ) {
     }
 
@@ -62,6 +62,9 @@ class Report
 
     private function sendToTelegram(string $archivePath, string $archiveName): void
     {
+        if (is_null($this->telegramSender)) {
+            return;
+        }
         try {
             $caption = "Real Estate Reports - " . date('Y-m-d H:i:s') . "\nFile: " . $archiveName;
             $this->telegramSender->sendDocument($archivePath, $caption);

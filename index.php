@@ -64,11 +64,11 @@ $sites = [
     new Yalta70()
 ];
 
-$botToken = $_ENV['TELEGRAM_BOT_TOKEN'];
-$chatId = $_ENV['TELEGRAM_CHAT_ID'];
+//$botToken = $_ENV['TELEGRAM_BOT_TOKEN'];
+//$chatId = $_ENV['TELEGRAM_CHAT_ID'];
 
-$telegramSender = new TelegramSender($botToken, $chatId);
-$report = new Report($sites, new ZipArchiver(), $telegramSender);
+//$telegramSender = new TelegramSender($botToken, $chatId);
+$report = new Report($sites, new ZipArchiver(), null);
 
 $report->make();
 

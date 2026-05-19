@@ -23,9 +23,4 @@ class Voikov extends TokenPrefetch implements SiteInterface
         //https://voikov.com/#/catalog/house/130502/smallGrid?filter=property.status:AVAILABLE
         return 'https://voikov.com';
     }
-
-    protected function getClientId(): string
-    {
-        return '2255';
-    }
 }

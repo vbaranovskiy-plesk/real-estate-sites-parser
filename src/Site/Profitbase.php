@@ -13,8 +13,6 @@ abstract class Profitbase implements SiteInterface
 
     abstract protected function getSiteUrl(): string;
 
-    abstract protected function getClientId(): string;
-
     abstract protected function getAuthToken(): string;
 
     public function getData(): array
